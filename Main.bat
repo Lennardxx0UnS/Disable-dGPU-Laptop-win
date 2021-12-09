@@ -1,3 +1,4 @@
+REM 执行前请先用devcon把设备ID查清楚，然后修改注释中强调的部分再运行！
 @echo off
 echo "Disable/Enable dGPU Tool"
 echo Make sure that this script is run as an administrator.
@@ -19,6 +20,7 @@ goto :Show
 :Show
 echo  %txt% | findstr "disabled" && devcon enable *"VEN_XXXXXX" && echo Enable dGPU. || devcon disable *"VEN_XXXXXX" && echo Disable dGPU.
 del %Windir%\%tmp%.txt
+REM 注意修改
 goto end
 
 :end
